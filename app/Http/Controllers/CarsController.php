@@ -43,15 +43,11 @@ class CarsController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        //create car
-
-        $carRequest = $request->get('name');
-        Car::create($carRequest);
         
-//        Car::create([
-//            'name' => $request->get('name')
-//        ]);
+        Car::create([
+            'name' => $request->get('name'),
+            'user_id' => Auth::user()->id
+        ]);
 
         return redirect('/cars');
     }
