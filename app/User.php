@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Car;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+
+
+
+
 }
