@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'user_id'];
 
     public function user()
     {
