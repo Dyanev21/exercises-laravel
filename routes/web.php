@@ -17,8 +17,10 @@ Route::get('/tasks', 'TasksController@index');
 Route::get('/tasks/{task}', 'TasksController@show');
 
 
+
+
 Route::get('/posts/create', 'PostController@create');
 Route::get('/posts/{post}', 'PostController@show');
-
 Route::post('/posts', 'PostController@store');
+
 Route::post('/posts/{post}/comments', 'CommentsController@store');

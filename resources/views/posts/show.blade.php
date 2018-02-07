@@ -36,10 +36,7 @@
         <div class="card">
             <div class="card-block">
                 <form method="POST" action="/posts/{{ $post->id }}/comments">
-
                     {{ csrf_field() }}
-
-                    {{ method_field('PATCH') }}
                     <div class="form-group">
                         <textarea name="body" placeholder="Your comment here." class="form-control"></textarea>
                     </div>
@@ -50,6 +47,8 @@
                 </form>
             </div>
         </div>
+        
+        @include('layouts.errors')
 
     </div>
 @endsection
